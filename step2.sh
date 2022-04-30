@@ -7,40 +7,40 @@ apk add mesa-gl glib feh firefox-esr accountsservice openvpn
 apk add docker docker-compose
 
 # add user
-adduser ibuetler
-mkdir -p /home/ibuetler/wallpaper
-mkdir -p /home/ibuetler/.config/i3
+adduser maximo
+mkdir -p /home/maximo/wallpaper
+mkdir -p /home/maximo/.config/i3
 
-# user setup ibuetler
-cp ./ibuetler/wallpaper/compass.jpg /home/ibuetler/wallpaper/compass.jpg
-cp ./ibuetler/.config/i3/config /home/ibuetler/.config/i3/config
-cp ./ibuetler/.profile /home/ibuetler/.profile
-mkdir -p /home/ibuetler/.scripts
-cp ./ibuetler/login-script.sh /home/ibuetler/.scripts/login-script.sh
-chown -R ibuetler:ibuetler /home/ibuetler
+# user setup maximo
+cp ./maximo/wallpaper/compass.jpg /home/maximo/wallpaper/compass.jpg
+cp ./maximo/.config/i3/config /home/maximo/.config/i3/config
+cp ./maximo/.profile /home/maximo/.profile
+mkdir -p /home/maximo/.scripts
+cp ./ibuetler/login-script.sh /home/maximo/.scripts/login-script.sh
+chown -R ibuetler:maximo /home/maximo
 
-# add ibuetler to sudoers
-cat ./ibuetler/sudoers >> /etc/sudoers
+# add maximo to sudoers
+cat ./maximo/sudoers >> /etc/sudoers
 
 # greeter background
-echo "background=/home/ibuetler/wallpaper/compass.jpg" >> /etc/lightdm/lightdm-gtk-greeter.conf
+echo "background=/home/maximo/wallpaper/compass.jpg" >> /etc/lightdm/lightdm-gtk-greeter.conf
 
 # set background image in accountsservice
-cp ./ibuetler/ibuetler /var/lib/AccountsService/users
-chown root:root /var/lib/AccountsService/users/ibuetler
+cp ./ibuetler/maximo /var/lib/AccountsService/users
+chown root:root /var/lib/AccountsService/users/maximo
 
 # add user to docker
-addgroup ibuetler docker
+addgroup maximo docker
 
 # enable copy paste in vmware
 chmod g+s /usr/bin/vmware-user-suid-wrapper
 
 # give ibuetler write access to /opt dir
-chown ibuetler:ibuetler /opt
+chown maximo:maximo /opt
 
 # mkdir /opt/docker
 mkdir -p /opt/docker
 cp ./docker/* /opt/docker/
-chown ibuetler:ibuetler /opt/docker
+chown maximo:maximo /opt/docker
 
 
