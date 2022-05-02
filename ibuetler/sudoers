@@ -1,2 +1,0 @@
-maximo ALL=(ALL) ALL
-maximo ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /usr/sbin/openvpn, /bin/mount, /usr/bin/vmware-user-suid-wrapper

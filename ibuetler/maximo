@@ -1,8 +1,0 @@
-[org.freedesktop.DisplayManager.AccountsService]
-BackgroundFile='/home/maximo/wallpaper/compass.jpg'
-
-[User]
-Session=xfce
-XSession=i3
-Icon=/home/maximo/.face
-SystemAccount=false
